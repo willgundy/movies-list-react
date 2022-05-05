@@ -25,7 +25,7 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
-Outline
+Outline:
 
 1. Movie form
     - form
@@ -43,3 +43,13 @@ Outline
     - Div
         - Movie
         - Add delete to each movie
+
+
+State:
+1. Movies (Array)
+2. Filtered Movies (Array)
+3. formTitle
+4. formYear
+5. formBackgroundColor
+6. formTextColor
+7. filterText
