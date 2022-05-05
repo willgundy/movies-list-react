@@ -7,18 +7,21 @@ import Movie from './Movie';
 function App() {
   //state to be tracked in app.js
   const [movies, setMovies] = useState([{
+    id: 0,
     title: 'Jaws',
     year: 1976,
     backgroundColor: '#22333B',
     textColor: '#F2F4F3'
   },
   {
+    id: 1,
     title: 'Willow',
     year: 1986,
     backgroundColor: '#240B36',
     textColor: '#F2DC5D'
   },
   {
+    id: 2,
     title: 'Battlefield Earth',
     year: 1996,
     backgroundColor: '#463F3A',
@@ -33,10 +36,20 @@ function App() {
   const [filterText, setFilterText] = useState('');
 
   function handleDeleteMovieByIndex(index) {
-    console.log(index);
     movies.splice(index, 1);
     setMovies([...movies]);
   }
+
+  useEffect(filterMoviesByTitleOrYear, [movies, filterText]);
+
+  function filterMoviesByTitleOrYear() {
+    const matchingMovies = movies.filter(movie => 
+      movie.title.toLowerCase().includes(filterText.toLowerCase())
+    );
+    setFilteredMovies([...matchingMovies]);
+  }
+
+  console.log(movies);
 
   return (
     <div className="App">
@@ -71,11 +84,15 @@ function App() {
       <section className='viewMovies'>
 
         {/*Input field where the user can edit state (filterText) in order to filter the movies that display, matches on Title using USEEFFECT above*/}
-        <input value={filterText} onChange={(e => setFilterText(e.target.value))} />
+        <label>
+          Filter Movies on Title or Year:
+          <input value={filterText} onChange={(e => setFilterText(e.target.value))} />
+        </label>
+        
         
         {/*Display list of all movies previously added, user is able to delete a movie by clicking on the div*/}
         <MovieList 
-          movies={movies}
+          movies={filterText ? filteredMovies : movies}
           handleDelete={handleDeleteMovieByIndex}
         />
       </section>

@@ -7,8 +7,13 @@ export default function MovieForm(props) {
   function handleMovieSubmit(e) {
     e.preventDefault();
 
+    const movieIdArr = props.movies.map(movie => { return movie.id; });
+
+    const newMovieId = Math.max(...movieIdArr) + 1;
+
     {/*creates a new Movie and adds to the Movies state*/}
     const newMovie = {
+      id: newMovieId,
       title: props.title,
       year: props.year,
       backgroundColor: props.backgroundColor,

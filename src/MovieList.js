@@ -8,7 +8,7 @@ export default function MovieList({ movies, handleDelete }) {
       {movies.map((movie, i) => 
         <Movie 
           key={i}
-          index={i}
+          id={movie.id}
           title={movie.title}
           year={movie.year}
           backgroundColor={movie.backgroundColor}
