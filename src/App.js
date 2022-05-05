@@ -9,20 +9,20 @@ function App() {
   const [movies, setMovies] = useState([{
     title: 'Jaws',
     year: 1976,
-    backgroundColor: '#FFFFFFF',
-    textColor: '#000000'
+    backgroundColor: '#22333B',
+    textColor: '#F2F4F3'
   },
   {
     title: 'Willow',
     year: 1986,
-    backgroundColor: '#FFFFFFF',
-    textColor: '#000000'
+    backgroundColor: '#240B36',
+    textColor: '#F2DC5D'
   },
   {
     title: 'Battlefield Earth',
     year: 1996,
-    backgroundColor: '#FFFFFFF',
-    textColor: '#000000'
+    backgroundColor: '#463F3A',
+    textColor: '#E0AFA0'
   },
   ]);
   const [filteredMovies, setFilteredMovies] = useState(movies);
