@@ -1,6 +1,8 @@
 import React from 'react';
+import { TwitterPicker } from 'react-color';
 
 export default function MovieForm(props) {
+
   {/*writing function for handling the submit action on the form*/}
   function handleMovieSubmit(e) {
     e.preventDefault();
@@ -23,8 +25,24 @@ export default function MovieForm(props) {
   }
 
   return (
-    <div>
-
-    </div>
+    <form onSubmit={handleMovieSubmit}>
+      <h1>Make a New Movie:</h1>
+      <label>
+        Movie Name:
+        <input value={props.formTitle} onChange={(e) => props.setFormTitle(e.target.value)} />
+      </label>
+      <label>
+        Movie Year:
+        <input type={'number'} value={props.formYear} onChange={(e) => props.setFormYear(e.target.value)} />
+      </label>
+      <label>
+        Background Color:
+        <TwitterPicker color={props.backgroundColor} onChange={ (color) => { props.setFormBackgroundColor(color.hex); } }/>
+      </label>
+      <label>
+        Text Color:
+        <TwitterPicker color={props.textColor} onChange={ (color) => { props.setFormTextColor(color.hex); } }/>
+      </label>
+    </form>
   );
 }

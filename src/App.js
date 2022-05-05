@@ -10,8 +10,8 @@ function App() {
   const [filteredMovies, setFilteredMovies] = useState(movies);
   const [formTitle, setFormTitle] = useState('');
   const [formYear, setFormYear] = useState('');
-  const [formBackgroundColor, setFormBackgroundColor] = useState('000');
-  const [formTextColor, setFormTextColor] = useState('FFF');
+  const [formBackgroundColor, setFormBackgroundColor] = useState('#ffffff');
+  const [formTextColor, setFormTextColor] = useState('#000000');
   const [filterText, setFilterText] = useState('');
 
   return (
@@ -30,6 +30,7 @@ function App() {
           setFormYear={setFormYear}
           setFormBackgroundColor={setFormBackgroundColor}
           setFormTextColor={setFormTextColor}
+          setMovies={setMovies}
         />
 
         {/*Object where user can check current state of the form and how the Movie will appear in the Movie List */}
