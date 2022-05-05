@@ -17,8 +17,6 @@ export default function MovieForm(props) {
 
     props.setMovies([...props.movies, newMovie]);
 
-    console.log(props.movies);
-
     {/*Also resets state for the form*/}
     props.setFormTitle('');
     props.setFormYear('');

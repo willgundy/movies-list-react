@@ -32,6 +32,12 @@ function App() {
   const [formTextColor, setFormTextColor] = useState('#FFFFFF');
   const [filterText, setFilterText] = useState('');
 
+  function handleDeleteMovieByIndex(index) {
+    console.log(index);
+    movies.splice(index, 1);
+    setMovies([...movies]);
+  }
+
   return (
     <div className="App">
 
@@ -70,6 +76,7 @@ function App() {
         {/*Display list of all movies previously added, user is able to delete a movie by clicking on the div*/}
         <MovieList 
           movies={movies}
+          handleDelete={handleDeleteMovieByIndex}
         />
       </section>
     </div>

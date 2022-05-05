@@ -1,17 +1,19 @@
 import React from 'react';
 import Movie from './Movie';
 
-export default function MovieList(props) {
+export default function MovieList({ movies, handleDelete }) {
   return (
     <div>
       <h1>Movies</h1>
-      {props.movies.map((movie, i) => 
+      {movies.map((movie, i) => 
         <Movie 
           key={i}
+          index={i}
           title={movie.title}
           year={movie.year}
           backgroundColor={movie.backgroundColor}
           textColor={movie.textColor}
+          handleDelete={handleDelete}
         />
       )}
     </div>
