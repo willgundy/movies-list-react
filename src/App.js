@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+  const [formTitle, setFormTitle] = useState('');
+  const [formYear, setFormYear] = useState('');
+  const [formBackgroundColor, setFormBackgroundColor] = useState('');
+  const [formTextColor, setFormTextColor] = useState('');
+  const [filterText, setFilterText] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className='addMovie'>
+        <MovieForm />
+        <Movie />
+      </section>
+      <MovieList />
     </div>
   );
 }
