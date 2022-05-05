@@ -1,10 +1,13 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import MovieList from './MovieList';
+import MovieForm from './MovieForm';
+import Movie from './Movie';
 
 function App() {
   //state to be tracked in app.js
   const [movies, setMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState(movies);
   const [formTitle, setFormTitle] = useState('');
   const [formYear, setFormYear] = useState('');
   const [formBackgroundColor, setFormBackgroundColor] = useState('');
@@ -18,10 +21,24 @@ function App() {
       <section className='addMovie'>
 
         {/*form for adding a new movie to the Movie List, where state is primarily edited*/}
-        <MovieForm />
+        <MovieForm 
+          title={formTitle}
+          year={formYear}
+          backgroundColor={formBackgroundColor}
+          textColor={formTextColor}
+          setFormTitle={setFormTitle}
+          setFormYear={setFormYear}
+          setFormBackgroundColor={setFormBackgroundColor}
+          setFormTextColor={setFormTextColor}
+        />
 
         {/*Object where user can check current state of the form and how the Movie will appear in the Movie List */}
-        <Movie />
+        <Movie 
+          title={formTitle}
+          year={formYear}
+          backgroundColor={formBackgroundColor}
+          textColor={formTextColor}
+        />
       </section>
 
       {/*List of Movies at bottom of the page where user can view, filter, or delete previously added movies*/}
@@ -31,7 +48,9 @@ function App() {
         <input value={filterText} onChange={(e => setFilterText(e.target.value))} />
         
         {/*Display list of all movies previously added, user is able to delete a movie by clicking on the div*/}
-        <MovieList />
+        <MovieList 
+          movies={filterText ? filteredMovies : movies}
+        />
       </section>
     </div>
   );
