@@ -14,22 +14,6 @@ function App() {
   const [formTextColor, setFormTextColor] = useState('FFF');
   const [filterText, setFilterText] = useState('');
 
-  function handleMovieSubmit() {
-    const newMovie = {
-      name: formTitle,
-      year: formYear,
-      backgroundColor: formBackgroundColor,
-      textColor: formTextColor
-    };
-
-    setMovies([...movies, newMovie]);
-
-    setFormTitle('');
-    setFormYear('');
-    setFormBackgroundColor('000');
-    setFormTextColor('FFF');
-  }
-
   return (
     <div className="App">
 
@@ -46,7 +30,6 @@ function App() {
           setFormYear={setFormYear}
           setFormBackgroundColor={setFormBackgroundColor}
           setFormTextColor={setFormTextColor}
-          handleSubmit={handleMovieSubmit}
         />
 
         {/*Object where user can check current state of the form and how the Movie will appear in the Movie List */}
