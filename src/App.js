@@ -6,7 +6,25 @@ import Movie from './Movie';
 
 function App() {
   //state to be tracked in app.js
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([{
+    title: 'Jaws',
+    year: 1976,
+    backgroundColor: '#FFFFFFF',
+    textColor: '#000000'
+  },
+  {
+    title: 'Willow',
+    year: 1986,
+    backgroundColor: '#FFFFFFF',
+    textColor: '#000000'
+  },
+  {
+    title: 'Battlefield Earth',
+    year: 1996,
+    backgroundColor: '#FFFFFFF',
+    textColor: '#000000'
+  },
+  ]);
   const [filteredMovies, setFilteredMovies] = useState(movies);
   const [formTitle, setFormTitle] = useState('test');
   const [formYear, setFormYear] = useState('1999');
@@ -51,7 +69,7 @@ function App() {
         
         {/*Display list of all movies previously added, user is able to delete a movie by clicking on the div*/}
         <MovieList 
-          movies={filterText ? filteredMovies : movies}
+          movies={movies}
         />
       </section>
     </div>

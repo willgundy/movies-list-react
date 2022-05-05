@@ -1,5 +1,5 @@
 import React from 'react';
-import { TwitterPicker } from 'react-color';
+import { CompactPicker } from 'react-color';
 
 export default function MovieForm(props) {
 
@@ -9,19 +9,21 @@ export default function MovieForm(props) {
 
     {/*creates a new Movie and adds to the Movies state*/}
     const newMovie = {
-      name: props.formTitle,
-      year: props.formYear,
-      backgroundColor: props.formBackgroundColor,
-      textColor: props.formTextColor
+      title: props.title,
+      year: props.year,
+      backgroundColor: props.backgroundColor,
+      textColor: props.textColor
     };
 
     props.setMovies([...props.movies, newMovie]);
 
+    console.log(props.movies);
+
     {/*Also resets state for the form*/}
     props.setFormTitle('');
     props.setFormYear('');
-    props.setFormBackgroundColor('000');
-    props.setFormTextColor('FFF');
+    props.setFormBackgroundColor('#000000');
+    props.setFormTextColor('#FFFFFF');
   }
 
   return (
@@ -37,11 +39,11 @@ export default function MovieForm(props) {
       </label>
       <label>
         Background Color:
-        <TwitterPicker color={props.backgroundColor} onChange={ (color) => { props.setFormBackgroundColor(color.hex); } }/>
+        <CompactPicker color={props.backgroundColor} onChange={ (color) => { props.setFormBackgroundColor(color.hex); } }/>
       </label>
       <label>
         Text Color:
-        <TwitterPicker color={props.textColor} onChange={ (color) => { props.setFormTextColor(color.hex); } }/>
+        <CompactPicker color={props.textColor} onChange={ (color) => { props.setFormTextColor(color.hex); } }/>
       </label>
       <button>Submit Movie</button>
     </form>
