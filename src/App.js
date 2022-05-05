@@ -44,12 +44,11 @@ function App() {
 
   function filterMoviesByTitleOrYear() {
     const matchingMovies = movies.filter(movie => 
-      movie.title.toLowerCase().includes(filterText.toLowerCase())
+      movie.title.toLowerCase().includes(filterText.toLowerCase()) || movie.year.toString().includes(filterText)
     );
     setFilteredMovies([...matchingMovies]);
   }
 
-  console.log(movies);
 
   return (
     <div className="App">
