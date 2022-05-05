@@ -8,10 +8,10 @@ function App() {
   //state to be tracked in app.js
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState(movies);
-  const [formTitle, setFormTitle] = useState('');
-  const [formYear, setFormYear] = useState('');
-  const [formBackgroundColor, setFormBackgroundColor] = useState('#ffffff');
-  const [formTextColor, setFormTextColor] = useState('#000000');
+  const [formTitle, setFormTitle] = useState('test');
+  const [formYear, setFormYear] = useState('1999');
+  const [formBackgroundColor, setFormBackgroundColor] = useState('#000000');
+  const [formTextColor, setFormTextColor] = useState('#FFFFFF');
   const [filterText, setFilterText] = useState('');
 
   return (
@@ -31,6 +31,7 @@ function App() {
           setFormBackgroundColor={setFormBackgroundColor}
           setFormTextColor={setFormTextColor}
           setMovies={setMovies}
+          movies={movies}
         />
 
         {/*Object where user can check current state of the form and how the Movie will appear in the Movie List */}

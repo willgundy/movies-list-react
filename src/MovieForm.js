@@ -29,11 +29,11 @@ export default function MovieForm(props) {
       <h1>Make a New Movie:</h1>
       <label>
         Movie Name:
-        <input value={props.formTitle} onChange={(e) => props.setFormTitle(e.target.value)} />
+        <input value={props.title} onChange={(e) => props.setFormTitle(e.target.value)} />
       </label>
       <label>
         Movie Year:
-        <input type={'number'} value={props.formYear} onChange={(e) => props.setFormYear(e.target.value)} />
+        <input type={'number'} value={props.year} onChange={(e) => props.setFormYear(e.target.value)} />
       </label>
       <label>
         Background Color:
@@ -43,6 +43,7 @@ export default function MovieForm(props) {
         Text Color:
         <TwitterPicker color={props.textColor} onChange={ (color) => { props.setFormTextColor(color.hex); } }/>
       </label>
+      <button>Submit Movie</button>
     </form>
   );
 }
