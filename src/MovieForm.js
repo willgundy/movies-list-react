@@ -32,7 +32,6 @@ export default function MovieForm(props) {
 
   return (
     <form onSubmit={handleMovieSubmit}>
-      <h1>Make a New Movie:</h1>
       <label>
         Movie Name:
         <input value={props.title} onChange={(e) => props.setFormTitle(e.target.value)} />

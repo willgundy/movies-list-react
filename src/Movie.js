@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Movie(props) {
   return (
-    <div style={{ backgroundColor: props.backgroundColor.color, color: props.textColor.color }}
+    <div className='movie' style={{ backgroundColor: props.backgroundColor.color, color: props.textColor.color }}
       onClick={() => props.handleDelete && props.handleDelete(props.id)}
     >
       <h2>{props.title}</h2>

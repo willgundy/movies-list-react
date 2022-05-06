@@ -3,8 +3,7 @@ import Movie from './Movie';
 
 export default function MovieList({ movies, handleDelete }) {
   return (
-    <div>
-      <h1>Movies</h1>
+    <div className='movieList'>
       {movies.map((movie, i) => 
         <Movie 
           key={i}

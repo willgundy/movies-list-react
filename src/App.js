@@ -32,10 +32,11 @@ function App() {
   const [formTitle, setFormTitle] = useState('test');
   const [formYear, setFormYear] = useState('1999');
   const [formBackgroundColor, setFormBackgroundColor] = useState({ color:'#000000', display: false });
-  const [formTextColor, setFormTextColor] = useState({ color:'#282c34', display: false });
+  const [formTextColor, setFormTextColor] = useState({ color:'#FFFFFF', display: false });
   const [filterText, setFilterText] = useState('');
 
-  function handleDeleteMovieByIndex(index) {
+  function handleDeleteMovieByIndex(id) {
+    const index = movies.findIndex(movie => movie.id === id);
     movies.splice(index, 1);
     setMovies([...movies]);
   }
@@ -49,12 +50,10 @@ function App() {
     setFilteredMovies([...matchingMovies]);
   }
 
-  console.log(formTextColor);
-
-
   return (
     <div className="App">
-
+      
+      <h1>Make a New Movie:</h1>
       {/*top section where the user can add/edit movie information*/}
       <section className='addMovie'>
 
@@ -81,6 +80,7 @@ function App() {
         />
       </section>
 
+      <h1>MovieList</h1>
       {/*List of Movies at bottom of the page where user can view, filter, or delete previously added movies*/}
       <section className='viewMovies'>
 
