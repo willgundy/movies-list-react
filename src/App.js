@@ -10,29 +10,29 @@ function App() {
     id: 0,
     title: 'Jaws',
     year: 1976,
-    backgroundColor: '#22333B',
-    textColor: '#F2F4F3'
+    backgroundColor: { color:'#22333B' },
+    textColor: { color:'#F2F4F3' }
   },
   {
     id: 1,
     title: 'Willow',
     year: 1986,
-    backgroundColor: '#240B36',
-    textColor: '#F2DC5D'
+    backgroundColor: { color:'#240B36' },
+    textColor: { color:'#F2DC5D' }
   },
   {
     id: 2,
     title: 'Battlefield Earth',
     year: 1996,
-    backgroundColor: '#463F3A',
-    textColor: '#E0AFA0'
+    backgroundColor: { color:'#463F3A' },
+    textColor: { color:'#E0AFA0' }
   },
   ]);
   const [filteredMovies, setFilteredMovies] = useState(movies);
   const [formTitle, setFormTitle] = useState('test');
   const [formYear, setFormYear] = useState('1999');
-  const [formBackgroundColor, setFormBackgroundColor] = useState('#000000');
-  const [formTextColor, setFormTextColor] = useState('#FFFFFF');
+  const [formBackgroundColor, setFormBackgroundColor] = useState({ color:'#000000', display: false });
+  const [formTextColor, setFormTextColor] = useState({ color:'#282c34', display: false });
   const [filterText, setFilterText] = useState('');
 
   function handleDeleteMovieByIndex(index) {
@@ -48,6 +48,8 @@ function App() {
     );
     setFilteredMovies([...matchingMovies]);
   }
+
+  console.log(formTextColor);
 
 
   return (

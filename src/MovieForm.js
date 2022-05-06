@@ -1,5 +1,6 @@
 import React from 'react';
-import { CompactPicker } from 'react-color';
+import { SketchPicker } from 'react-color';
+import ColorPicker from './ColorPicker';
 
 export default function MovieForm(props) {
 
@@ -17,7 +18,7 @@ export default function MovieForm(props) {
       title: props.title,
       year: props.year,
       backgroundColor: props.backgroundColor,
-      textColor: props.textColor
+      textColor: props.textColor 
     };
 
     props.setMovies([...props.movies, newMovie]);
@@ -42,11 +43,17 @@ export default function MovieForm(props) {
       </label>
       <label>
         Background Color:
-        <CompactPicker color={props.backgroundColor} onChange={ (color) => { props.setFormBackgroundColor(color.hex); } }/>
+        <ColorPicker 
+          state={props.backgroundColor}
+          setState={props.setFormBackgroundColor}
+        />
       </label>
       <label>
         Text Color:
-        <CompactPicker color={props.textColor} onChange={ (color) => { props.setFormTextColor(color.hex); } }/>
+        <ColorPicker 
+          state={props.textColor}
+          setState={props.setFormTextColor}
+        />
       </label>
       <button>Submit Movie</button>
     </form>

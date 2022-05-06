@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.colorPicker {
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.popover {
+  position: absolute;
+  z-index: 2;
+}
+
+.cover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
