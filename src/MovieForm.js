@@ -1,5 +1,4 @@
 import React from 'react';
-import { SketchPicker } from 'react-color';
 import ColorPicker from './ColorPicker';
 
 export default function MovieForm(props) {
