@@ -25,19 +25,19 @@ export default function MovieForm(props) {
     {/*Also resets state for the form*/}
     props.setFormTitle('');
     props.setFormYear('');
-    props.setFormBackgroundColor('#000000');
-    props.setFormTextColor('#FFFFFF');
+    props.setFormBackgroundColor({ color: '#000000' });
+    props.setFormTextColor({ color:'#FFFFFF' });
   }
 
   return (
     <form onSubmit={handleMovieSubmit}>
       <label>
         Movie Name:
-        <input value={props.title} onChange={(e) => props.setFormTitle(e.target.value)} />
+        <input required value={props.title} onChange={(e) => props.setFormTitle(e.target.value)} />
       </label>
       <label>
         Movie Year:
-        <input type={'number'} value={props.year} onChange={(e) => props.setFormYear(e.target.value)} />
+        <input required type={'number'} value={props.year} onChange={(e) => props.setFormYear(e.target.value)} />
       </label>
       <label>
         Background Color:
